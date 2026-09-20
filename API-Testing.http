@@ -22,7 +22,7 @@ Content-Type: application/json
 {
   "senderId": 3,
   "receiverId": 1,
-  "amount": 1000.00
+  "amount": 10000.00
 }
 
 

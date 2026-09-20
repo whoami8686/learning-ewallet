@@ -46,15 +46,6 @@ public class TransferServiceImpl implements TransferService {
         User sender = getUser(request.senderId());
         User receiver = getUser(request.receiverId());
 
-        /*
-         * Always lock wallets in the same order.
-         *
-         * Example:
-         * Transfer 1 -> 2 = lock 1, then lock 2
-         * Transfer 2 -> 1 = lock 1, then lock 2
-         *
-         * This reduces the possibility of deadlock.
-         */
         Long firstUserId = Math.min(
                 sender.getId(),
                 receiver.getId()

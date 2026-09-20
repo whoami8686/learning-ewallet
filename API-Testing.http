@@ -1,0 +1,48 @@
+### Get Balance - Ana
+GET http://localhost:8080/api/v1/wallets/1/balance
+Accept: application/json
+
+
+### Transfer Success
+POST http://localhost:8080/api/v1/transfers
+Content-Type: application/json
+Accept: application/json
+
+{
+  "senderId": 1,
+  "receiverId": 2,
+  "amount": 100.00
+}
+
+
+### Transfer - Insufficient Balance
+POST http://localhost:8080/api/v1/transfers
+Content-Type: application/json
+
+{
+  "senderId": 3,
+  "receiverId": 1,
+  "amount": 1000.00
+}
+
+
+### Transfer - Same User
+POST http://localhost:8080/api/v1/transfers
+Content-Type: application/json
+
+{
+  "senderId": 1,
+  "receiverId": 1,
+  "amount": 100.00
+}
+
+
+### Transfer - Invalid Amount
+POST http://localhost:8080/api/v1/transfers
+Content-Type: application/json
+
+{
+  "senderId": 1,
+  "receiverId": 2,
+  "amount": 0
+}

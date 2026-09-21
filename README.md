@@ -105,6 +105,7 @@ GET /api/v1/wallets/99/balance
 {
   "data": null,
   "error": {
+    "timestamp": "2026-09-21T12:07:18.3294186",
     "status": 404,
     "code": "RESOURCE_NOT_FOUND",
     "message": "Wallet not found for userId: 99"
@@ -171,6 +172,7 @@ Response:
 {
   "data": null,
   "error": {
+    "timestamp": "2026-09-21T12:04:07.6722616",
     "status": 400,
     "code": "INSUFFICIENT_BALANCE",
     "message": "Insufficient balance"
@@ -196,6 +198,7 @@ Response:
 {
   "data": null,
   "error": {
+    "timestamp": "2026-09-21T12:05:03.3149911",
     "status": 400,
     "code": "BUSINESS_ERROR",
     "message": "Sender and receiver must be different"
@@ -216,6 +219,19 @@ Request:
 ```
 
 The API will return `400 Bad Request` because the minimum transfer amount is `0.01`.
+
+```json
+{
+  "data": null,
+  "error": {
+    "timestamp": "2026-09-21T12:05:23.7886868",
+    "status": 400,
+    "code": "VALIDATION_ERROR",
+    "message": "amount: amount must be at least 0.01"
+  }
+}
+```
+
 
 ## API Testing
 
